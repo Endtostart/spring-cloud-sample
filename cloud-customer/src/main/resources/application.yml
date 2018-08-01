@@ -1,0 +1,12 @@
+server:
+  port: 8082
+myurl:
+  url: http://127.0.0.1:8081/hi
+spring:
+  application:
+    name: cloud-customer
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    defaultZone: http://localhost:8761/eureka/
