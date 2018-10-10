@@ -9,6 +9,9 @@ zuul:
       path: /hi-public/**
       #url: http://localhost:8762
       serviceId: server-hi
+    customer:
+      path: /home/**
+      serviceId: cloud-customer
 eureka:
   client:
     fetch-registry: true
