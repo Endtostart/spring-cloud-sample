@@ -22,6 +22,7 @@
         <module>cloud-customer</module>
         <module>cloud-zuul</module>
         <module>config-server</module>
+        <module>cloud-getway</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

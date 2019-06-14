@@ -1,12 +1,24 @@
 server:
-  port: 8082
+  port: 8066
 myurl:
   url: http://127.0.0.1:8081/hi
 spring:
   application:
     name: cloud-customer
+  cloud:
+    config:
+      name: cloud-customer
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: config-server
+    compatibility-verifier:
+      enabled: false
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    instanceId: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}
+#    preferIpAddress: true
