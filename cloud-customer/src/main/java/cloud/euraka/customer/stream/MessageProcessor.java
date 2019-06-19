@@ -1,16 +1,18 @@
 package cloud.euraka.customer.stream;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.integration.support.MessageBuilder;
-import org.springframework.messaging.MessageChannel;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.Resource;
+import rediskafka.RedisKafka;
 
 @Component
 public class MessageProcessor {
-    @Resource(name = MsgChannal.PAY_MESSAGE_INPUT)
-    MessageChannel payMessageChannel;
+
+    Logger logger = LoggerFactory.getLogger(MessageProcessor.class);
+
+    @Autowired
+    RedisKafka redisKafka;
 
     /**
      * 发送支付消息
@@ -18,7 +20,8 @@ public class MessageProcessor {
      * @param <T>
      * @return
      */
-    public <T> boolean sendPayMessage(T message) {
-       return payMessageChannel.send(MessageBuilder.withPayload(message).build());
+    public <T> void sendPayMessage(T message) {
+        logger.info("发送支付消息");
+        redisKafka.send(MsgChannal.PAY_MESSAGE_TOPIC, message);
     }
 }

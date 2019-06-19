@@ -12,7 +12,7 @@ spring:
           search-locations: D:/home/src/spring-cloud-sample/config
 eureka:
   instance:
-    instanceId: ${spring.application.name}
+    instanceId: ${spring.application.name}:${server.port}
   client:
     register-with-eureka: true
     fetch-registry: false

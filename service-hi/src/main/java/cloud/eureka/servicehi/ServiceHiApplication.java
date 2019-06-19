@@ -1,5 +1,6 @@
 package cloud.eureka.servicehi;
 
+import cloud.eureka.servicehi.stream.MsgChannal;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
