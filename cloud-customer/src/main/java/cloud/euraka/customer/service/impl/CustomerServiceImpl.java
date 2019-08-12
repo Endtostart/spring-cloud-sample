@@ -28,7 +28,7 @@ public class CustomerServiceImpl implements CustomserService {
         ServiceInstance service = instances.get(0);
         String url = service.getHost() + ":" + service.getPort();
         return restTemplate.getForObject("http://"+url+"/info?id="+id,String.class);*/
-        return restTemplate.getForObject("http://"+serviceId+"/info/"+id,String.class);
+        return restTemplate.getForObject("http://"+serviceId+"/hi/info/"+id,String.class);
     }
 
     @Override

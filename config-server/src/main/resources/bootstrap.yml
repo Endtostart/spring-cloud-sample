@@ -9,7 +9,7 @@ spring:
     config:
       server:
         native:
-          search-locations: D:/home/src/spring-cloud-sample/config
+          search-locations: classpath:/dev
 eureka:
   instance:
     instanceId: ${spring.application.name}:${server.port}

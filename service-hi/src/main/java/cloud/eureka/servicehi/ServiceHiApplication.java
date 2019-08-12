@@ -22,29 +22,4 @@ public class ServiceHiApplication {
     public static void main(String[] args) {
         SpringApplication.run(ServiceHiApplication.class, args);
     }
-
-    @Value("${url.name}")
-    String url;
-
-    @Value("${name}")
-    String name;
-    @RequestMapping("/hi")
-    public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
-        return "hi " + name + ", port: " + url;
-    }
-
-    @RequestMapping("/name")
-    public String getName() {
-        return name;
-    }
-
-    @RequestMapping("/info/{id}")
-    public String info(@PathVariable("id") String id) {
-        return "this messeage from service-hi, value is :" + id;
-    }
-
-    @RequestMapping("/customer/{name}")
-    public String getCustomer(@PathVariable("name") String name) {
-        return "this messeage from service-hi, use feign client send request. customer name is: " + name + ",url:" + url;
-    }
 }

@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequestMapping
+@RequestMapping("customer")
 public class CustomerController {
     @Autowired
     CustomserService customserService;
 
-    @RequestMapping("/customer")
+    @RequestMapping("/detail")
     @ResponseBody
     public String getCustomer(String id) {
         return customserService.getInfo(id);
